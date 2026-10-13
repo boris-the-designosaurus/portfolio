@@ -30,6 +30,21 @@ export function TeamYouDraftPage() {
         .ty-hero { display: flex; flex-direction: column; gap: 40px; }
         @media (min-width: 1024px) { .ty-hero { flex-direction: row; align-items: flex-start; } }
         .ty-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .ty-results { display: flex; align-items: flex-start; gap: 40px; width: 100%; }
+        .ty-results-label { flex: 1 1 0; min-width: 0; }
+        .ty-results-content { flex: 2 1 0; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+        .ty-results-summary { margin: 0; font-size: 31px; font-weight: 400; line-height: 1.4; }
+        .ty-results-card { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; gap: 20px; padding: 40px; border-radius: 24px; background: #F3F0ED; }
+        .ty-result-item { min-width: 0; }
+        .ty-result-title { display: flex; align-items: center; gap: 8px; margin: 0; font-size: 36px; font-weight: 500; line-height: 1.2; }
+        .ty-result-check { flex: none; color: #62BE79; }
+        .ty-result-description { margin: 0; font-size: 14px; font-weight: 400; line-height: 1.5; }
+        @media (max-width: 767px) {
+          .ty-results { flex-direction: column; gap: 20px; }
+          .ty-results-summary { font-size: 25px; }
+          .ty-results-card { grid-template-columns: 1fr; gap: 24px; padding: 28px; }
+          .ty-result-title { font-size: 30px; }
+        }
       `}</style>
 
       {/* Nav */}
@@ -225,6 +240,35 @@ export function TeamYouDraftPage() {
             <img src={patterns1Img} alt="TeamYou today view" style={{ width: '100%', display: 'block', borderRadius: '22px 22px 22px 22px', boxShadow: '0px 2px 4px 0px rgba(0, 0, 0, 0.08)' }} />
           </div>
         </div>
+
+        {/* Results */}
+        <section className="ty-results" aria-labelledby="ty-results-heading">
+          <div className="ty-results-label">
+            <h2 id="ty-results-heading" style={{ fontWeight: 500, fontSize: 24, lineHeight: 'normal', color: '#0f1629', margin: 0 }}>Results</h2>
+          </div>
+          <div className="ty-results-content">
+            <p className="ty-results-summary">
+              I built TeamYou to improve my own process by integrating AI where it could add leverage—helping me frame the right problem, challenge weak assumptions, surface user pain points, catch contextual errors, and stay honest about whether the work was actually solving what it set out to solve.
+            </p>
+            <div className="ty-results-card">
+              {[
+                { title: 'AI UX', description: 'End-to-end AI workflow' },
+                { title: 'TECH', description: 'Builder + systems fluency' },
+                { title: 'HCD', description: 'Human-centered judgment' },
+              ].map(({ title, description }) => (
+                <div className="ty-result-item" key={title}>
+                  <h3 className="ty-result-title">
+                    <svg className="ty-result-check" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="m4 12.5 5.2 5.2L20 6.8" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    {title}
+                  </h3>
+                  <p className="ty-result-description">{description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Up next */}
         <div style={{ width: '100%' }}>
