@@ -129,7 +129,7 @@ export function TeamYouDraftPage() {
         </div>
 
         {/* Problem section */}
-        <div style={{ display: 'flex', gap: 40, alignItems: 'flex-start', width: '100%', paddingb: '32px' }}>
+        <div style={{ display: 'flex', gap: 40, alignItems: 'flex-start', width: '100%', paddingBottom: '32px' }}>
           <div style={{ flex: '1 0 0', minWidth: 0, overflow: 'hidden' }}>
             <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500, fontSize: 24, lineHeight: 'normal', color: '#0f1629', whiteSpace: 'nowrap', margin: 0 }}>Problem</p>
           </div>

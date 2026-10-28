@@ -1,47 +1,8 @@
-import { useState, useEffect } from "react";
-
 const teamYouLogo = "/images/Logo-teamYou.svg";
 const thumbSelfScheduling = "/images/thumb-selfScheduling.png";
 const thumbInbox = "/images/Thumb-inbox.png";
 const thumbInbox1 = "/images/Thumb-inbox.png";
-const imgTeamYouToday = "/images/imgTeamYouToday.png";
-const imgTeamYouTodayDetail = "/images/today-screen.png";
-const imgTeamYouSlack = "/images/8.png";
-const imgTeamyouKudos = "/images/31.png";
-const imgTeamyouKudosMobile = "/images/33.png";
-const imgSelfScheduleDateSelect = "/images/thumb-selfScheduling.png";
-const imgInvoiceConfirmation = "/images/1.png";
-const imgPaymentScreen = "/images/2026-09-19_12-22-40.png";
-
-const teamyouSlides = [
-  { src: imgTeamYouToday, alt: "TeamYou Today view with daily goals and task tracking", caption: "TeamYou — Todo + Quality Scoring (Personal Project): Designed a workflow that turns AI collaboration into prioritized to-dos, a role-based daily baseline, and a \"review-ready\" score that checks spec, UX, and visual completeness—so work ships with fewer revision loops and progress is measurable over time.", project: "teamyou" as const },
-  { src: imgTeamYouTodayDetail, alt: "TeamYou Todo Detail with AI collaboration and acceptance review", caption: "TeamYou — Todo Detail + Acceptance Review: Designed a structured \"system of record\" for AI collaboration: each todo has a workflow, acceptance checklist, and an AI review that surfaces what's missing. The result is a \"review-safe\" score (90+) for spec, UX, and readiness—reducing rework and keeping quality consistent from draft to ship-ready.", project: "teamyou" as const },
-  { src: imgTeamyouKudos, alt: "TeamYou Kudos feed with peer recognition and progress tracking", caption: "TeamYou — Kudos Feed: Designed a recognition feed that turns shoutouts into structured, track-based kudos (Skills, Character, Company Values) so appreciation doesn't disappear in chat.", project: "teamyou" as const },
-  { src: imgTeamyouKudosMobile, alt: "TeamYou Character Award celebration modal", caption: "TeamYou — Badge Detail + Level Up: Turns peer kudos into track-based progression (Character, Skills, Company Values). Level-ups unlock after consistent thresholds, reinforcing growth with narrative and rewards.", project: "teamyou" as const },
-  { src: imgTeamYouSlack, alt: "TeamYou Slack integration", caption: "TeamYou — Slack Integration: Designed a Slack integration that allows users to manage their to-dos and kudos directly from their Slack workspace.", project: "teamyou" as const },
-];
-
-const selfSchedulingSlides = [
-  { src: imgSelfScheduleDateSelect, alt: "Ontraport — Self scheduling calendar", caption: "Ontraport — Self Scheduling Calendar: Led end-to-end design of self-scheduling, Google Calendar integration, and payments—enabling seamless booking, payment, and invoicing.", project: "selfscheduling" as const },
-  { src: imgInvoiceConfirmation, alt: "Ontraport — Invoicing & Payment Confirmation", caption: "Ontraport — Invoicing & Payment Confirmation: Designed a flexible invoicing experience that allows users to send invoices directly to clients and automate follow-up workflows.", project: "selfscheduling" as const },
-  { src: imgPaymentScreen, alt: "Ontraport — Self scheduling pay screen", caption: "Ontraport — Self Scheduling Pay Screen: Designed a customer-facing payment experience that allows invoices to be sent and paid immediately.", project: "selfscheduling" as const },
-];
-
-
-
 export function NewHomePageDraft() {
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const [tyDrawerOpen, setTyDrawerOpen] = useState(false);
-  const [activeProject] = useState<"selfscheduling">("selfscheduling");
-
-  const openDrawer = (project: "teamyou" | "selfscheduling") => {
-    if (project === "teamyou") {
-      setTyDrawerOpen(true);
-    } else {
-      setActiveProject("selfscheduling");
-      setDrawerOpen(true);
-    }
-  };
   const cards = [
     {
       icon: 'TY',
