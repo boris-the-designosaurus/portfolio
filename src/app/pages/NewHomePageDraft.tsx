@@ -1,7 +1,12 @@
+import { ContactFooter } from "../components/ContactFooter";
+import { SiteNavigation } from "../components/SiteNavigation";
+
 const teamYouLogo = "/images/Logo-teamYou.svg";
 const thumbSelfScheduling = "/images/thumb-selfScheduling.png";
 const thumbInbox = "/images/Thumb-inbox.png";
-const thumbInbox1 = "/images/Thumb-inbox.png";
+const thumbweekdayCommish = "/images/thumb-weekdayCommish.png";
+
+
 export function NewHomePageDraft() {
   const cards = [
     {
@@ -31,7 +36,7 @@ export function NewHomePageDraft() {
   ];
 
   return (
-    <div style={{ fontFamily: 'sans-serif', backgroundColor: '#FBFAF9', minHeight: '100vh', color: '#111111' }}>
+    <div style={{ fontFamily: 'sans-serif', backgroundColor: '#FBFAF9', minHeight: '100vh', color: '#111111', display: 'flex', flexDirection: 'column' }}>
       <style>{`
         * { box-sizing: border-box; }
         .nav-links { display: flex; gap: 40px; align-items: flex-end; }
@@ -58,50 +63,27 @@ export function NewHomePageDraft() {
         }
       `}</style>
 
-      {/* Nav */}
-      <nav>
-        <div className="wf-container flex items-end justify-end px-[24px] py-[16px] lg:py-0 lg:h-[64px]" style={{ maxWidth: 1248, margin: '0 auto' }}>
-          <div className="inline-flex flex-col lg:flex-row lg:items-end lg:gap-[40px] gap-[8px] items-start border-b border-solid border-[#f0f0ef] ml-auto">
-            <div className="content-stretch flex flex-col items-start justify-end pb-[4px] relative shrink-0">
-              <div className="[word-break:break-word] flex flex-col font-['Poppins',sans-serif] font-normal justify-end leading-none not-italic relative shrink-0 text-[#0f1629] text-[26px] whitespace-nowrap">
-                <p className="leading-[32px]">Jonathan Warrecker</p>
-              </div>
-            </div>
-            <div className="flex flex-row items-end gap-[24px] lg:contents">
-              <div className="content-stretch flex flex-col items-start pb-[4px] relative shrink-0">
-                <div aria-hidden className="absolute border-[#ff4f01] border-b border-solid inset-[0_0_-1px_0] pointer-events-none" />
-                <p className="[word-break:break-word] font-['Poppins',sans-serif] font-medium leading-[27px] not-italic relative shrink-0 text-[#e15a26] text-[18px] whitespace-nowrap">Work</p>
-              </div>
-              <div className="content-stretch flex flex-col items-start pb-[4px] relative shrink-0">
-                <p className="[word-break:break-word] font-['Poppins',sans-serif] font-normal leading-[27px] not-italic relative shrink-0 text-[#0f1629] text-[18px] whitespace-nowrap">About</p>
-              </div>
-              <div className="content-stretch flex flex-col items-start pb-[4px] relative shrink-0">
-                <p className="[word-break:break-word] font-['Poppins',sans-serif] font-normal leading-[27px] not-italic relative shrink-0 text-[#0f1629] text-[18px] whitespace-nowrap">Contact</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <SiteNavigation />
 
-      <div className="wf-container" style={{ maxWidth: 1248, margin: '0 auto' }}>
+      <div className="wf-container" style={{ maxWidth: 1280, margin: '0 auto', padding: '0 16px', flex: 1 }}>
 
         {/* Hero */}
-        <div className="px-[24px] pt-[80px] pb-[60px]" style={{ position: 'relative' }}>
+        <div className="pt-[80px] pb-[60px]" style={{ position: 'relative' }}>
           <div className="flex flex-col lg:flex-row gap-[40px] items-start justify-center w-full">
             <div className="flex w-full lg:flex-[1_0_0] flex-col items-start justify-center leading-[1.5] min-w-px not-italic text-[#0f1629] [word-break:break-word]">
-              <p className="font-['Poppins',sans-serif] font-semibold relative shrink-0 text-[36px] lg:text-[48px] w-full">Jonathan Warrecker</p>
-              <p className="font-['Poppins',sans-serif] font-light relative shrink-0 text-[22px] w-full">I&apos;m a product designer driven by a love of craft—creating products that are effortless to use, and deliver measurable growth.</p>
+              <p className="font-['Poppins',sans-serif] font-semibold relative shrink-0 text-[36px] lg:text-[48px] w-full">Hi I'm Jon,</p>
+              <p className="font-['Poppins',sans-serif] font-medium relative shrink-0 text-[28px] w-full">I&apos;m a product designer driven by a love of craft—creating products that are effortless to use, and deliver measurable growth.</p>
             </div>
             <div className="hidden lg:block flex-[1_0_0] min-w-px relative self-stretch" />
           </div>
         </div>
 
         {/* Project grid */}
-        <div className="px-[24px] pb-[80px]">
+        <div className="pb-[80px]">
 
           <div className="wf-grid grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-10">
-            {cards.map((card, i) => i === 0 ? (
-                <div key={i} className="flex flex-col gap-6 rounded-[24px] bg-[#F4F2EF] p-6 sm:rounded-[32px] sm:p-10" style={{ fontFamily: "'Poppins', sans-serif" }}
+            {cards.map((_, i) => i === 0 ? (
+                <div key={i} className="flex flex-col gap-6 rounded-[24px] bg-[#F2EFEB] p-6 sm:rounded-[32px] sm:p-10" style={{ fontFamily: "'Poppins', sans-serif" }}
     >
   <div className="flex flex-col gap-1">
     <img
@@ -130,7 +112,7 @@ export function NewHomePageDraft() {
     ))}
   </div>
 
-  <div className="overflow-hidden rounded-[12px] shadow-md">
+  <div className="overflow-hidden rounded-[12px]">
     <img
       src="/images/thumb-teamyou.png"
       alt="TeamYou application preview"
@@ -141,39 +123,161 @@ export function NewHomePageDraft() {
   <div className="flex justify-end">
     <button
       onClick={() => window.location.href = "/draft/teamyou"}
-      className="flex cursor-pointer items-center gap-2 rounded-full bg-[#3D3D3D] px-6 py-3 text-[16px] font-medium text-white transition-colors hover:bg-[#222]"
+      className="flex cursor-pointer items-center gap-2 rounded-full bg-[#3D3D3D] px-6 py-3 text-[16px] font-medium text-white transition-colors hover:bg-[#ED5625]"
     >
       View
-      <span aria-hidden="true">›</span>
+      <span aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 4L9.95033 7.88215C10.0166 7.94724 10.0166 8.05276 9.95033 8.11785L6 12" stroke="#EFEDEB" stroke-width="2" stroke-linecap="round"/>
+</svg>
+</span>
     </button>
   </div>
 </div>
-              ) : (
-                <div key={i} className="wf-card" style={{ backgroundColor: '#F3F0ED', gap: 24 }}>
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
-                    <div style={{ width: 42, height: 42, flexShrink: 0 }}><img
-  src="/images/Logo-ON.svg"
-  alt="Ontraport"
-  style={{ width: 42, height: 42, display: "block" }}
-/></div>
+              ) : i === 1 ? (
+                <div key={i} className="flex flex-col gap-6 rounded-[24px] bg-[#F2EFEB] p-6 sm:rounded-[32px] sm:p-10" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                  <div className="flex flex-col gap-1">
+                    <img
+                      src="/images/Logo-op.svg"
+                      alt="Ontraport logo"
+                      className="mb-1 h-[52px] w-[52px]"
+                    />
+                    <h3 className="m-0 text-[28px] font-semibold leading-tight text-[#252B3A]">
+                      Ontraport
+                    </h3>
+                    <p className="m-0 text-[18px] font-normal leading-[1.5] text-[#252B3A] sm:text-[20px]">
+                      Enabling businesses to turn more interest into booked appointments.
+                    </p>
                   </div>
-                  <p style={{ fontSize: 18, fontWeight: 300, lineHeight: 1.5, margin: 0, color: '#222' }}>{card.title}</p>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-                    {card.tags.map(tag => (
-                      <span key={tag} className="wf-tag">{tag}</span>
+
+                  <div className="flex flex-wrap gap-2">
+                    {["Scheduling", "Chat", "B2B"].map(tag => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-[#E3DFDA] px-4 py-2 text-[14px] leading-none text-[#686661]"
+                      >
+                        {tag}
+                      </span>
                     ))}
                   </div>
-                                    <div style={{ position: 'relative', width: '100%', borderRadius: 12, overflow: 'hidden', boxShadow: '0 0 2px rgba(0,0,0,0.08), 0 1px 0.75px rgba(0,0,0,0.08)' }}>
-                    <img src={i === 1 ? thumbSelfScheduling : i === 2 ? thumbInbox1 : thumbInbox} alt="Product screenshot" style={{ width: '100%', display: 'block' }} />
-                    <div style={{ position: 'absolute', inset: 0, borderRadius: 12, border: '1.5px solid rgba(255,255,255,0.5)', pointerEvents: 'none' }} />
+
+                  <div className="overflow-hidden rounded-[12px]">
+                    <img
+                      src={thumbSelfScheduling}
+                      alt="Ontraport self-scheduling calendar preview"
+                      className="block h-auto w-full"
+                    />
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    <button onClick={() => {if (i === 1) window.location.href = "/self-scheduling";}} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, backgroundColor: '#222', color: '#fff', border: 'none', borderRadius: 100, padding: '10px 20px', fontSize: 16, fontFamily: "'Poppins', sans-serif", fontWeight: 500, cursor: 'pointer' }}>
+
+                  <div className="flex justify-end">
+                    <a
+                      href="/self-scheduling"
+                      className="inline-flex items-center gap-2 rounded-full bg-[#3D3D3D] px-6 py-3 text-[16px] font-medium text-white no-underline transition-colors hover:bg-[#1285FF]"
+                    >
                       View
-                      <svg width="6" height="10" viewBox="0 0 6 10" fill="none" style={{ flexShrink: 0 }}>
-                        <path d="M1 1L4.95033 4.88215C5.01656 4.94724 5.01656 5.05276 4.95033 5.11785L1 9" stroke="#ED5625" strokeLinecap="round" strokeWidth="2" />
-                      </svg>
-                    </button>
+                      <span aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M6 4L9.95033 7.88215C10.0166 7.94724 10.0166 8.05276 9.95033 8.11785L6 12" stroke="#EFEDEB" strokeWidth="2" strokeLinecap="round" />
+                        </svg>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              ) : i === 2 ? (
+                <div key={i} className="flex flex-col gap-6 rounded-[24px] bg-[#F2EFEB] p-6 sm:rounded-[32px] sm:p-10" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                  <div className="flex flex-col gap-1">
+                    <img
+                      src="/images/Logo-op.svg"
+                      alt="Ontraport logo"
+                      className="mb-1 h-[52px] w-[52px]"
+                    />
+                    <h3 className="m-0 text-[28px] font-semibold leading-tight text-[#252B3A]">
+                      Ontraport
+                    </h3>
+                    <p className="m-0 text-[18px] font-normal leading-[1.5] text-[#252B3A] sm:text-[20px]">
+                      Giving teams one shared inbox for every customer conversation.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {["Messaging", "CRM", "B2B"].map(tag => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-[#E3DFDA] px-4 py-2 text-[14px] leading-none text-[#686661]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="overflow-hidden rounded-[12px]">
+                    <img
+                      src={thumbInbox}
+                      alt="Ontraport inbox showing customer conversations"
+                      className="block h-auto w-full"
+                    />
+                  </div>
+
+                  <div className="flex justify-end">
+                    <a
+                      href="/inbox"
+                      className="inline-flex items-center gap-2 rounded-full bg-[#3D3D3D] px-6 py-3 text-[16px] font-medium text-white no-underline transition-colors hover:bg-[#1285FF]"
+                    >
+                      View
+                      <span aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M6 4L9.95033 7.88215C10.0166 7.94724 10.0166 8.05276 9.95033 8.11785L6 12" stroke="#EFEDEB" strokeWidth="2" strokeLinecap="round" />
+                        </svg>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              ) : (
+                <div key={i} className="flex flex-col gap-6 rounded-[24px] bg-[#F2EFEB] p-6 sm:rounded-[32px] sm:p-10" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                  <div className="flex flex-col gap-1">
+                    <img
+                      src="/images/Logo-WeekDayCommish.svg"
+                      alt="Ontraport logo"
+                      className="mb-1 h-[52px] w-[52px]"
+                    />
+                    <h3 className="m-0 text-[28px] font-semibold leading-tight text-[#252B3A]">
+                      Current project
+                    </h3>
+                    <p className="m-0 text-[18px] font-normal leading-[1.5] text-[#252B3A] sm:text-[20px]">
+                      AI-first league management. Less admin, more leagues.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {["AI Agents", "Workflow Automation", "B2B2C"].map(tag => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-[#E3DFDA] px-4 py-2 text-[14px] leading-none text-[#686661]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="overflow-hidden rounded-[12px]">
+                    <img
+                      src={thumbweekdayCommish}
+                      alt="Ontraport inbox showing customer conversations"
+                      className="block h-auto w-full"
+                    />
+                  </div>
+
+                  <div className="flex justify-end">
+                    <span
+                      aria-disabled="true"
+                      className="inline-flex cursor-default items-center gap-2 rounded-full bg-[#3D3D3D] px-6 py-3 text-[16px] font-medium text-white opacity-50"
+                    >
+                      View
+                      <span aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M6 4L9.95033 7.88215C10.0166 7.94724 10.0166 8.05276 9.95033 8.11785L6 12" stroke="#EFEDEB" strokeWidth="2" strokeLinecap="round" />
+                        </svg>
+                      </span>
+                    </span>
                   </div>
                 </div>
             ))}
@@ -184,15 +288,46 @@ export function NewHomePageDraft() {
 
      
 
-      {/* Footer placeholder */}
-      <div style={{ borderTopWidth: '1.5px', borderTopStyle: 'solid', borderTopColor: '#C8C8C8' }}>
-        <div className="wf-container" style={{ maxWidth: 1248, margin: '0 auto', padding: '32px 24px' }}>
-          <div style={{ fontSize: 10, color: '#999', letterSpacing: 1, marginBottom: 16 }}>FOOTER</div>
-          <div className="wf-placeholder" style={{ width: 180, height: 16, marginBottom: 12 }} />
-          <div style={{ display: 'flex', gap: 16 }}>
-            <div className="wf-placeholder" style={{ width: 40, height: 40, borderRadius: '50%' }} />
-            <div className="wf-placeholder" style={{ width: 40, height: 40, borderRadius: '50%' }} />
-          </div>
+      <section
+        aria-labelledby="at-a-glance-heading"
+        className="mx-auto mb-8 w-full max-w-[1280px] px-4 "
+      >
+        <div className="bg-[#F3F0ED] p-6 sm:p-10 gap-6 rounded-[32px] sm:p-10 lg:p-15">
+          <h2 id="at-a-glance-heading" className="font-['Poppins',sans-serif] mb-6 mt-0 text-[28px] font-semibold leading-[1.3] text-[#0f1629]">
+            At a glance
+          </h2>
+          <dl className="m-0">
+            <div className="grid gap-3 border-t border-[#E3DFDA] py-6 sm:grid-cols-2 sm:gap-8">
+              <dt className="font-['Poppins',sans-serif] text-[18px] font-medium leading-[1.5] text-[#252B3A] sm:text-[20px]">What I do</dt>
+              <dd className="m-0 font-['Poppins',sans-serif] text-[18px] font-normal leading-[1.5] text-[#252B3A] sm:text-[20px]">
+                Senior Product Designer making complex B2B SaaS workflows clear and intuitive through strategy, visual craft, and technical understanding.
+              </dd>
+            </div>
+            <div className="grid gap-3 border-t border-[#E3DFDA] py-6 sm:grid-cols-2 sm:gap-8">
+              <dt className="font-['Poppins',sans-serif] text-[18px] font-medium leading-[1.5] text-[#252B3A] sm:text-[20px]">My experience</dt>
+              <dd className="m-0 font-['Poppins',sans-serif] text-[18px] font-normal leading-[1.5] text-[#252B3A] sm:text-[20px]">
+                Led design from concept through implementation for CRM, payments and invoicing, scheduling, messaging, drag-and-drop editors, and marketing automation.
+              </dd>
+            </div>
+            <div className="grid gap-3 border-t border-[#E3DFDA] py-6 sm:grid-cols-2 sm:gap-8">
+              <dt className="font-['Poppins',sans-serif] text-[18px] font-medium leading-[1.5] text-[#252B3A] sm:text-[20px]">Proven results</dt>
+              <dd className="m-0 font-['Poppins',sans-serif] text-[18px] font-normal leading-[1.5] text-[#252B3A] sm:text-[20px]">
+                <strong>20+ initiatives shipped</strong> over 15 years at Ontraport. Inbox: <strong>~$1M additional annual revenue.</strong> Self-Scheduling: <strong>24% higher booking completion.</strong>
+              </dd>
+            </div>
+            <div className="grid gap-3 border-y border-[#E3DFDA] py-6 sm:grid-cols-2 sm:gap-8">
+              <dt className="font-['Poppins',sans-serif] text-[18px] font-medium leading-[1.5] text-[#252B3A] sm:text-[20px]">Now and next</dt>
+              <dd className="m-0 font-['Poppins',sans-serif] text-[18px] font-normal leading-[1.5] text-[#252B3A] sm:text-[20px]">
+                Freelancing and developing TeamYou, an independent project exploring AI-assisted design. Seeking a hands-on senior role with a small SaaS team. Open to contracts.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <div style={{ paddingTop: 32, marginTop: 'auto' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 16px' }}>
+          <ContactFooter />
         </div>
       </div>
     </div>
