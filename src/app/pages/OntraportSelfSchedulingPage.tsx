@@ -35,16 +35,16 @@ export function OntraportSelfSchedulingPage() {
           />
         </figure>
 
-        <section className="grid gap-6 lg:grid-cols-[1fr_2fr] lg:gap-10">
-          <h2 className="m-0 text-[24px] font-medium leading-[47px] text-[#616873]">Background</h2>
+        <section className="grid gap-6 lg:grid-cols-[363px_minmax(0,1fr)] lg:gap-10">
+          <h2 className="m-0 text-[24px] font-regular leading-[40px] text-[#616873]">Background</h2>
           <div className="flex flex-col gap-4">
-            <p className="m-0 text-[32px] font-normal leading-[1.35]">
+            <h2 className="mb-1 mt-0 text-[30px] font-medium leading-[1.3]">
               For coaches and consultants to grow their business, every new appointment should bring more opportunity—not more administrative work.
-            </p>
-            <p className="m-0 text-[20px] font-light leading-[1.5]">
+            </h2>
+            <p className="m-0 text-[24px] font-regular leading-[1.5] tracking-[0]">
               Self-scheduling evolved across several releases, connecting calendar availability, online booking, confirmations, reminders, appointment management, invoicing, and payment into one workflow.
             </p>
-            <div className="mt-1 grid gap-6 sm:grid-cols-3 sm:gap-8">
+            <div className="self-scheduling-meta-grid mt-4 grid gap-6 border-t border-[#E5E7EB] pt-6">
               <div>
                 <h3 className="mb-1 mt-0 text-[20px] font-semibold">Role</h3>
                 <p className="m-0 text-[20px] font-light leading-[1.5]">Design lead</p>
@@ -73,22 +73,22 @@ export function OntraportSelfSchedulingPage() {
           </div>
         </section>
 
-        <section className="grid gap-6 lg:grid-cols-[1fr_2fr] lg:gap-10">
-          <h2 className="m-0 text-[24px] font-medium leading-[47px] text-[#616873]">Problem</h2>
+        <section className="grid gap-6 lg:grid-cols-[363px_minmax(0,1fr)] lg:gap-10">
+          <h2 className="m-0 text-[24px] font-regular leading-[40px] text-[#616873]">Problem</h2>
           <div>
-            <p className="m-0 text-[32px] font-normal leading-[1.35]">
+            <p className="m-0 text-[30px] font-medium leading-[1.3]">
               Every appointment created administrative work.
             </p>
           </div>
         </section>
 
-        <section className="grid gap-6 lg:grid-cols-[1fr_2fr] lg:gap-10">
-          <h2 className="m-0 text-[24px] font-medium leading-[47px] text-[#616873]">The solution</h2>
+        <section className="grid gap-6 lg:grid-cols-[363px_minmax(0,1fr)] lg:gap-10">
+          <h2 className="m-0 text-[24px] font-regular leading-[40px] text-[#616873]">The solution</h2>
           <div>
-            <p className="mb-4 mt-0 text-[32px] font-normal leading-[1.4]">
+            <p className="mb-4 mt-0 text-[30px] font-medium leading-[1.3]">
               Automate the workflow from booking to payment.
             </p>
-            <p className="m-0 text-[20px] font-light leading-[1.5]">
+            <p className="m-0 text-[24px] font-regular leading-[1.5] tracking-[0]">
               Ontraport connected availability, self-scheduling, calendar sync, reminders, appointment records, invoicing, and payment so the workflow could move forward automatically with minimal intervention.
             </p>
           </div>
@@ -164,11 +164,11 @@ export function OntraportSelfSchedulingPage() {
           </figure>
         </div>
 
-        <section className="grid gap-6 lg:grid-cols-[1fr_2fr] lg:gap-10" aria-labelledby="self-scheduling-results-heading">
-          <h2 id="self-scheduling-results-heading" className="m-0 text-[24px] font-medium leading-[47px] text-[#616873]">
+        <section className="grid gap-6 lg:grid-cols-[363px_minmax(0,1fr)] lg:gap-10" aria-labelledby="self-scheduling-results-heading">
+          <h2 id="self-scheduling-results-heading" className="m-0 text-[24px] font-regular leading-[40px] text-[#616873]">
             Results
           </h2>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-12">
             <p className="m-0 text-[32px] font-normal leading-[1.4]">
               Self-scheduling reduced the friction of getting an appointment on the calendar while automating the work around it. Clients booked more successfully, appointments were scheduled faster, and automated reminders helped reduce no-shows.
             </p>
@@ -203,6 +203,17 @@ export function OntraportSelfSchedulingPage() {
           imageSrc="/images/Thumb-inbox.png"
           imageAlt="Ontraport Inbox project preview"
         />
+
+        <style>{`
+          @media (min-width: 640px) {
+            .self-scheduling-meta-grid {
+              grid-template-columns:
+                minmax(0, calc((100% - 64px) / 3 - 40px))
+                repeat(2, minmax(0, calc((100% - 64px) / 3 + 20px)));
+              column-gap: 32px;
+            }
+          }
+        `}</style>
 
         <ContactFooter />
 

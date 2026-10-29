@@ -4,18 +4,37 @@ import { Check } from 'lucide-react';
 export function SiteNavigation({ activePage = 'work' }: { activePage?: 'work' | 'about' }) {
   const [contactOpen, setContactOpen] = useState(false);
   const [copyStatus, setCopyStatus] = useState('');
-  const [hasScrolled, setHasScrolled] = useState(false);
+  const [contentOverlapsNav, setContentOverlapsNav] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
   const closeMenuTimer = useRef<number | undefined>(undefined);
 
   useEffect(() => {
-    function updateScrollState() {
-      setHasScrolled(window.scrollY > 0);
+    const nav = navRef.current;
+    const content = nav?.nextElementSibling;
+    if (!nav || !content) return;
+    const trigger = content.querySelector('h1') ?? content.firstElementChild;
+    if (!trigger) return;
+    const observedNav = nav;
+    const observedTrigger = trigger;
+
+    function updateContentOverlap() {
+      const navBounds = observedNav.getBoundingClientRect();
+      const triggerBounds = observedTrigger.getBoundingClientRect();
+      setContentOverlapsNav(triggerBounds.top <= navBounds.bottom);
     }
 
-    updateScrollState();
-    window.addEventListener('scroll', updateScrollState, { passive: true });
-    return () => window.removeEventListener('scroll', updateScrollState);
+    const resizeObserver = new ResizeObserver(updateContentOverlap);
+    resizeObserver.observe(observedNav);
+    resizeObserver.observe(observedTrigger);
+    updateContentOverlap();
+    window.addEventListener('scroll', updateContentOverlap, { passive: true });
+    window.addEventListener('resize', updateContentOverlap);
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener('scroll', updateContentOverlap);
+      window.removeEventListener('resize', updateContentOverlap);
+    };
   }, []);
 
   useEffect(() => {
@@ -70,12 +89,15 @@ export function SiteNavigation({ activePage = 'work' }: { activePage?: 'work' | 
         .site-nav-panel {
           box-sizing: border-box; width: min(100%, 648px); margin-left: auto;
           padding: 0 24px 24px; border-radius: 0 0 16px 16px;
-          background: #FBFAF9; pointer-events: auto;
+          background: transparent; pointer-events: auto;
         }
-        .site-nav-panel.is-scrolled { filter: drop-shadow(0 1px 0.75px rgba(0, 0, 0, 0.06)); }
+        .site-nav-panel.is-overlapping {
+          background: #FBFAF9;
+          filter: drop-shadow(0 1px 0.75px rgba(0, 0, 0, 0.06));
+        }
         .site-nav-link,
         .site-nav-contact { font-size: 18px; }
-        .site-nav-header { display: flex; flex-direction: column; gap: 12px; padding: 12px 0; background: transparent; pointer-events: auto; }
+        .site-nav-header { display: flex; flex-direction: column; gap: 12px; padding: 12px 0; background: transparent; border-bottom-color: #f0f0ef; pointer-events: auto; }
         .site-nav-links { display: flex; width: 100%; align-items: center; justify-content: space-between; }
         .site-nav-item { position: relative; display: flex; align-items: center; }
         .site-nav-item.is-active::after {
@@ -120,9 +142,9 @@ export function SiteNavigation({ activePage = 'work' }: { activePage?: 'work' | 
           .site-nav-item { height: auto; align-items: baseline; }
         }
       `}</style>
-      <nav aria-label="Main navigation" className="site-nav-sticky">
+      <nav ref={navRef} aria-label="Main navigation" className="site-nav-sticky">
         <div className="mx-auto w-full max-w-[1280px] px-4">
-          <div className={`site-nav-panel ${hasScrolled ? 'is-scrolled' : ''}`}>
+          <div className={`site-nav-panel ${contentOverlapsNav ? 'is-overlapping' : ''}`}>
             <div
               className="site-nav-header ml-auto w-full border-b border-[#f0f0ef]"
               style={{ width: 'min(100%, 600px)', marginLeft: 'auto' }}

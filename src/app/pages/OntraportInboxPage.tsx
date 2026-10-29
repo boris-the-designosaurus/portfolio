@@ -34,16 +34,16 @@ export function OntraportInboxPage() {
           />
         </figure>
 
-        <section className="grid gap-6 lg:grid-cols-[1fr_2fr] lg:gap-10">
-          <h2 className="m-0 text-[24px] font-normal leading-[47px] text-[#616873]">Background</h2>
+        <section className="grid gap-6 lg:grid-cols-[363px_minmax(0,1fr)] lg:gap-10">
+          <h2 className="m-0 text-[24px] font-regular leading-[40px] text-[#616873]">Background</h2>
           <div className="flex flex-col gap-4">
-            <p className="m-0 text-[32px] font-medium leading-[1.35]">
+            <h2 className="mb-1 mt-0 text-[30px] font-medium leading-[1.3]">
               Businesses rely on customer communication to build relationships, resolve issues, and move opportunities forward.
-            </p>
-            <p className="m-0 text-[20px] font-normal leading-[1.5]">
+            </h2>
+            <p className="m-0 text-[24px] font-regular leading-[1.5] tracking-[0]">
               At the time, many teams relied on shared inboxes and separate messaging tools. Ontraport wanted to centralize those conversations and route them to the right person or team, while connecting communication directly to customer data such as purchase history and contact activity.
             </p>
-            <div className="mt-1 grid gap-6 sm:grid-cols-3 sm:gap-8">
+            <div className="mt-4 grid gap-6 border-t border-[#E5E7EB] pt-6 sm:grid-cols-3 sm:gap-8">
               <div>
                 <h3 className="mb-1 mt-0 text-[20px] font-semibold">Role</h3>
                 <p className="m-0 text-[20px] font-light leading-[1.5]">Design lead</p>
@@ -72,22 +72,22 @@ export function OntraportInboxPage() {
           </div>
         </section>
 
-        <section className="grid gap-6 lg:grid-cols-[1fr_2fr] lg:gap-10">
-          <h2 className="m-0 text-[24px] font-normal leading-[47px] text-[#616873]">Problem</h2>
+        <section className="grid gap-6 lg:grid-cols-[363px_minmax(0,1fr)] lg:gap-10">
+          <h2 className="m-0 text-[24px] font-regular leading-[40px] text-[#616873]">Problem</h2>
           <div>
-            <p className="m-0 text-[32px] font-medium leading-[1.35]">
+            <p className="m-0 text-[30px] font-medium leading-[1.3]">
               Teams lacked a single place to see complete customer conversations alongside contact history and customer details. They also had no integrated way to chat with website visitors in real time.
             </p>
           </div>
         </section>
 
-        <section className="grid gap-6 lg:grid-cols-[1fr_2fr] lg:gap-10">
-          <h2 className="m-0 text-[24px] font-normal leading-[47px] text-[#616873]">The solution</h2>
+        <section className="grid gap-6 lg:grid-cols-[363px_minmax(0,1fr)] lg:gap-10">
+          <h2 className="m-0 text-[24px] font-regular leading-[40px] text-[#616873]">The solution</h2>
           <div>
-            <p className="mb-4 mt-0 text-[32px] font-medium leading-[1.4]">
+            <p className="mb-4 mt-0 text-[30px] font-medium leading-[1.3]">
               Central hub for managing one-on-one conversations with leads and clients.
             </p>
-            <p className="m-0 text-[20px] font-regular leading-[1.5]">
+            <p className="m-0 text-[24px] font-regular leading-[1.5] tracking-[0]">
             We created a centralized inbox for email, SMS, and web chat, with filters and routing to get conversations to the right team or person. Customer context lived alongside each conversation, while automation handled follow-up, business hours, escalation, and website chat.            </p>
           </div>
         </section>
@@ -143,11 +143,11 @@ export function OntraportInboxPage() {
         </section>
 
 
-        <section className="grid gap-6 lg:grid-cols-[1fr_2fr] lg:gap-10" aria-labelledby="self-scheduling-results-heading">
-          <h2 id="self-scheduling-results-heading" className="m-0 text-[24px] font-medium leading-[47px] text-[#616873]">
+        <section className="grid gap-6 lg:grid-cols-[363px_minmax(0,1fr)] lg:gap-10" aria-labelledby="self-scheduling-results-heading">
+          <h2 id="self-scheduling-results-heading" className="m-0 text-[24px] font-regular leading-[40px] text-[#616873]">
             Results
           </h2>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-12">
             <p className="m-0 text-[32px] font-medium leading-[1.4]">
               Inbox centralized text and email conversations across channels, helping businesses turn customer messages into sales opportunities. It also generated additional revenue for Ontraport through upgrades from existing customers and helped attract new customers seeking shared messaging.
             </p>

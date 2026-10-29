@@ -35,7 +35,7 @@ export function TeamYouDraftPage() {
         .ty-tags { display: flex; flex-wrap: wrap; gap: 8px; }
         .ty-results { display: flex; align-items: flex-start; gap: 40px; width: 100%; }
         .ty-results-label { flex: 1 1 0; min-width: 0; }
-        .ty-results-content { flex: 2 1 0; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+        .ty-results-content { flex: 2 1 0; min-width: 0; display: flex; flex-direction: column; gap: 48px; }
         .ty-results-summary { margin: 0; font-size: 31px; font-weight: 400; line-height: 1.4; }
         .ty-results-card { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; gap: 20px; padding: 40px; border-radius: 24px; background: #F3F0ED; }
         .ty-result-item { min-width: 0; display: flex; flex-direction: column; gap: 8px; }
@@ -95,48 +95,46 @@ export function TeamYouDraftPage() {
         </div>
 
         {/* Background section */}
-        <div style={{ display: 'flex', gap: 40, alignItems: 'flex-start', width: '100%' }}>
+        <section className="grid gap-6 lg:grid-cols-[363px_minmax(0,1fr)] lg:gap-10">
           {/* Label */}
-          <div style={{ flex: '1 0 0', minWidth: 0, overflow: 'hidden' }}>
-            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500, fontSize: 24, lineHeight: '52px', color: '#0f1629', whiteSpace: 'nowrap', margin: 0 }}>Background</p>
-          </div>
+          <h2 className="m-0 text-[24px] font-regular leading-[40px] text-[#616873]">Background</h2>
           {/* Content */}
-          <div style={{ flex: '2 0 0', minWidth: 0, display: 'flex', flexDirection: 'column', gap: 16, }}>
-            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: 31, lineHeight: 'normal', color: '#0f1629', margin: 0 }}>
+          <div className="flex min-w-0 flex-col gap-4">
+            <h2 className="mb-1 mt-0 text-[30px] font-medium leading-[1.3]">
               When anyone can build with a prompt, staying anchored to the user's real context, behavior, and desired outcome becomes more important than ever.
-            </p>
-            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: 20, lineHeight: 1.7, color: '#0f1629', margin: 0 }}>
+            </h2>
+            <p className="m-0 text-[24px] font-regular leading-[1.5] tracking-[0]">
               As I began using AI throughout my own design process, I noticed it was especially useful when it had the full context behind the work. It could challenge assumptions, keep decisions aligned with business goals and requirements, surface relevant research and patterns, and catch drift before it became rework.
             </p>
-            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: 20, lineHeight: 1.7, color: '#0f1629', margin: 0 }}>
+            <p className="m-0 text-[24px] font-regular leading-[1.5] tracking-[0]">
               I designed and built the concept end-to-end, including:<br />
               Product strategy · UX workflow · AI coach behavior · Decision system · Interface &amp; design system · Figma/MCP integration · Claude/Codex prototyping
             </p>
           </div>
-        </div>
+        </section>
 
         {/* Problem section */}
-        <div style={{ display: 'flex', gap: 40, alignItems: 'flex-start', width: '100%', paddingBottom: '32px' }}>
-          <div style={{ flex: '1 0 0', minWidth: 0, overflow: 'hidden' }}>
-            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500, fontSize: 24, lineHeight: '52px', color: '#0f1629', whiteSpace: 'nowrap', margin: 0 }}>Problem</p>
+        <div className="grid gap-6 pb-8 lg:grid-cols-[363px_minmax(0,1fr)] lg:gap-10">
+          <div className="min-w-0 overflow-hidden">
+            <h2 className="m-0 whitespace-nowrap text-[24px] font-regular leading-[40px] text-[#616873]">Problem</h2>
           </div>
-          <div style={{ flex: '2 0 0', minWidth: 0, }}>
-            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: 31, lineHeight: 'normal', color: '#0f1629', margin: 0 }}>
+          <div className="min-w-0">
+            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500, fontSize: 30, lineHeight: 1.3, color: '#0f1629', margin: 0 }}>
               Moving fast makes it easy to solve the wrong thing. Designers struggle to hold user needs, business goals, constraints, and decisions in context while designing—making drift and rework easy to miss.
             </p>
           </div>
         </div>
 
         {/* Solution section */}
-        <div className="px-[0px] pt-[0px]" style={{ display: 'flex', gap: 40, width: '100%' }}>
-          <div style={{ flex: '1 0 0', minWidth: 0, overflow: 'hidden' }}>
-            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500, fontSize: 24, lineHeight: '52px', color: '#0f1629', whiteSpace: 'nowrap', margin: 0 }}>Solution</p>
+        <div className="grid gap-6 lg:grid-cols-[363px_minmax(0,1fr)] lg:gap-10">
+          <div className="min-w-0 overflow-hidden">
+            <h2 className="m-0 whitespace-nowrap text-[24px] font-regular leading-[40px] text-[#616873]">Solution</h2>
           </div>
-          <div style={{ flex: '2 0 0', minWidth: 0, display: 'flex', flexDirection: 'column', gap: 16 }}>
-            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: 31, lineHeight: 'normal', color: '#0f1629', margin: 0 }}>
+          <div className="flex min-w-0 flex-col gap-4">
+            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500, fontSize: 30, lineHeight: 1.3, color: '#0f1629', margin: 0 }}>
               Keep decisions connected to the work
             </p>
-            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: 20, lineHeight: 1.7, color: '#0f1629', margin: 0 }}>
+            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: 24, lineHeight: 1.5, color: '#0f1629', margin: 0 }}>
               TeamYou turns project context into a persistent decision spine—capturing the user problem, business goals, constraints, and key decisions alongside the design. As the work evolves, the AI coach uses that context to challenge assumptions and flag drift before it becomes rework.
             </p>
           </div>
@@ -229,7 +227,7 @@ export function TeamYouDraftPage() {
         {/* Results */}
         <section className="ty-results" aria-labelledby="ty-results-heading">
           <div className="ty-results-label">
-            <h2 id="ty-results-heading" style={{ fontWeight: 500, fontSize: 24, lineHeight: '45px', color: '#0f1629', margin: 0 }}>Results</h2>
+            <h2 id="ty-results-heading" className="m-0 text-[24px] font-regular leading-[40px] text-[#616873]">Results</h2>
           </div>
           <div className="ty-results-content">
             <p className="ty-results-summary">
