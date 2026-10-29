@@ -92,7 +92,7 @@ export function OntraportInboxPage() {
           </div>
         </section>
 
-        <section className="overflow-hidden rounded-[28px] bg-[#F3F0EF]">
+        <section className="overflow-hidden rounded-[28px] bg-[#EEEBE9]">
           <div className="flex min-h-[254px] flex-col items-center justify-center p-6 text-center sm:p-[60px]">
             <h2 className="mb-4 mt-0 text-[32px] font-medium leading-[1.3]">A shared view of every conversation</h2>
             <p className="m-0 max-w-[800px] text-[20px] font-normal leading-[1.5]">
@@ -109,7 +109,7 @@ export function OntraportInboxPage() {
         </section>
 
 
-         <section className="overflow-hidden rounded-[28px] bg-[#F3F0EF]">
+         <section className="overflow-hidden rounded-[28px] bg-[#EEEBE9]">
           <div className="flex min-h-[254px] flex-col items-center justify-center p-6 text-center sm:p-[60px]">
             <h2 className="mb-4 mt-0 text-[32px] font-medium leading-[1.3]">Bring the conversation to your website</h2>
             <p className="m-0 max-w-[800px] text-[20px] font-normal leading-[1.5]">
@@ -126,7 +126,7 @@ export function OntraportInboxPage() {
         </section>
 
 
-                <section className="overflow-hidden rounded-[28px] bg-[#F3F0EF]">
+                <section className="overflow-hidden rounded-[28px] bg-[#EEEBE9]">
           <div className="flex min-h-[254px] flex-col items-center justify-center p-6 text-center sm:p-[60px]">
             <h2 className="mb-4 mt-0 text-[32px] font-medium leading-[1.3]">Answers after hours</h2>
             <p className="m-0 max-w-[800px] text-[20px] font-normal leading-[1.5]">

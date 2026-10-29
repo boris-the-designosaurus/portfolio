@@ -143,7 +143,7 @@ export function TeamYouDraftPage() {
         </div>
 
         {/* Introduction callout + spec image */}
-        <div style={{ backgroundColor: 'rgba(241,238,236,0.8)', textAlign: 'center', borderRadius: '32px 32px 32px 32px', width: '100%', overflow: 'hidden' }}>
+        <div style={{ backgroundColor: '#EEEBE9', textAlign: 'center', borderRadius: '32px 32px 32px 32px', width: '100%', overflow: 'hidden' }}>
           <div className="ty-feature-copy" style={{ display: 'flex', flexDirection: 'column',  alignItems: 'center', gap: '8px' }}>
             <p style={{ flex: '1 0 0', minWidth: 0, maxWidth: 800, textAlign: 'center', fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: 29, lineHeight: 'normal', color: '#0f1629', margin: 0 }}>
               Key decisions preserved alongside the final design
@@ -153,12 +153,12 @@ export function TeamYouDraftPage() {
             </p>
           </div>
           <div className="ty-feature-media">
-            <img src={specContentImg} alt="TeamYou spec content" style={{ width: '100%', display: 'block', borderRadius: '22px 22px 22px 22px', boxShadow: '0px 2px 4px 0px rgba(0, 0, 0, 0.08)' }} />
+            <img src={specContentImg} alt="TeamYou spec content" style={{ width: '100%', display: 'block', borderRadius: '22px 22px 22px 22px', boxShadow: '0px 2px 10px 2px rgba(0, 0, 0, 0.08)' }} />
           </div>
         </div>
 
         {/* Confidence before handoff + editor image */}
-        <div style={{ backgroundColor: 'rgba(241,238,236,0.8)', textAlign: 'center', borderRadius: '32px 32px 32px 32px', width: '100%', overflow: 'hidden' }}>
+        <div style={{ backgroundColor: '#EEEBE9', textAlign: 'center', borderRadius: '32px 32px 32px 32px', width: '100%', overflow: 'hidden' }}>
           <div className="ty-feature-copy" style={{ display: 'flex', flexDirection: 'column',  alignItems: 'center',  gap: '8px' }}>
             <p style={{ flex: '1 0 0', minWidth: 0, maxWidth: 800, textAlign: 'center', width: '100%', fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: 29, lineHeight: 'normal', color: '#0f1629', margin: 0 }}>
               Confidence before handoff
@@ -168,12 +168,12 @@ export function TeamYouDraftPage() {
             </p>
           </div>
           <div className="ty-feature-media">
-            <img src={editorImg} alt="TeamYou editor review" style={{ width: '100%', display: 'block', borderRadius: '22px 22px 22px 22px', boxShadow: '0px 2px 4px 0px rgba(0, 0, 0, 0.08)' }} />
+            <img src={editorImg} alt="TeamYou editor review" style={{ width: '100%', display: 'block', borderRadius: '22px 22px 22px 22px', boxShadow: '0px 2px 10px 2px rgba(0, 0, 0, 0.08)' }} />
           </div>
         </div>
 
         {/* Turn raw data into the right report */}
-        <div style={{ backgroundColor: 'rgba(241,238,236,0.8)', textAlign: 'center', borderRadius: '32px 32px 32px 32px', width: '100%', overflow: 'hidden' }}>
+        <div style={{ backgroundColor: '#EEEBE9', textAlign: 'center', borderRadius: '32px 32px 32px 32px', width: '100%', overflow: 'hidden' }}>
           <div className="ty-feature-copy" style={{ display: 'flex', flexDirection: 'column',  alignItems: 'center', gap: '8px' }}>
             <p style={{ flex: '1 0 0', minWidth: 0, maxWidth: 800, textAlign: 'center', width: '100%', fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: 29, lineHeight: 'normal', color: '#0f1629', margin: 0 }}>
               Turn raw data into the right report
@@ -187,12 +187,12 @@ export function TeamYouDraftPage() {
             </div>
           </div>
            <div className="ty-feature-media">
-            <img src={reportImg} alt="TeamYou report" style={{ width: '100%', display: 'block', borderRadius: '22px 22px 22px 22px', boxShadow: '0px 2px 4px 0px rgba(0, 0, 0, 0.08)' }} />
+            <img src={reportImg} alt="TeamYou report" style={{ width: '100%', display: 'block', borderRadius: '22px 22px 22px 22px', boxShadow: '0px 2px 10px 2px rgba(0, 0, 0, 0.08)'  }} />
           </div>
         </div>
 
         {/* Patterns section — centered layout */}
-        <div style={{ backgroundColor: 'rgba(241,238,236,0.8)', textAlign: 'center', borderRadius: '32px 32px 32px 32px', width: '100%', overflow: 'hidden' }}>
+        <div style={{ backgroundColor: '#EEEBE9', textAlign: 'center', borderRadius: '32px 32px 32px 32px', width: '100%', overflow: 'hidden' }}>
           <div className="ty-feature-copy" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
             <p style={{ textAlign: 'center', maxWidth: 800, fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: 29, lineHeight: 'normal', color: '#0f1629', margin: 0 }}>
               Find Relevant Patterns
@@ -202,7 +202,7 @@ export function TeamYouDraftPage() {
             </p>
           </div>
           <div className="ty-feature-media">
-            <img src={patternsImg} alt="TeamYou patterns" style={{ width: '100%', display: 'block', borderRadius: '22px 22px 22px 22px', boxShadow: '0px 2px 4px 0px rgba(0, 0, 0, 0.08)' }} />
+            <img src={patternsImg} alt="TeamYou patterns" style={{ width: '100%', display: 'block', borderRadius: '22px 22px 22px 22px', boxShadow: '0px 2px 10px 2px rgba(0, 0, 0, 0.08)'  }} />
           </div>
         </div>
 
@@ -222,7 +222,7 @@ export function TeamYouDraftPage() {
 
           
           <div className="ty-feature-media">
-            <img src={patterns1Img} alt="TeamYou today view" style={{ width: '100%', display: 'block', borderRadius: '22px 22px 22px 22px', boxShadow: '0px 2px 4px 0px rgba(0, 0, 0, 0.08)' }} />
+            <img src={patterns1Img} alt="TeamYou today view" style={{ width: '100%', display: 'block', borderRadius: '22px 22px 22px 22px', boxShadow: '0px 2px 10px 2px rgba(0, 0, 0, 0.08)'  }} />
           </div>
         </div>
 
