@@ -4,10 +4,12 @@ import { TeamYouDraftPage } from './app/pages/TeamYouDraftPage'
 import { OntraportSelfSchedulingPage } from './app/pages/OntraportSelfSchedulingPage'
 import { OntraportInboxPage } from './app/pages/OntraportInboxPage'
 import { AboutPage } from './app/pages/AboutPage'
+import { GoogleAnalyticsPageTracker } from './app/components/GoogleAnalyticsPageTracker'
 
 export default function App() {
   return (
     <BrowserRouter>
+      <GoogleAnalyticsPageTracker />
       <Routes>
         <Route path="/" element={<NewHomePageDraft />} />
         <Route path="/about" element={<AboutPage />} />
