@@ -13,7 +13,7 @@ export function SiteNavigation({ activePage = 'work' }: { activePage?: 'work' | 
     const nav = navRef.current;
     const content = nav?.nextElementSibling;
     if (!nav || !content) return;
-    const trigger = content.querySelector('h1') ?? content.firstElementChild;
+    const trigger = content.querySelector('h1, p') ?? content.firstElementChild;
     if (!trigger) return;
     const observedNav = nav;
     const observedTrigger = trigger;
