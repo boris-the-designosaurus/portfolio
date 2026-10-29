@@ -12,7 +12,8 @@ export default function App() {
         <Route path="/" element={<NewHomePageDraft />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/draft" element={<Navigate to="/" replace />} />
-        <Route path="/draft/teamyou" element={<TeamYouDraftPage />} />
+        <Route path="/teamyou" element={<TeamYouDraftPage />} />
+        <Route path="/draft/teamyou" element={<Navigate to="/teamyou" replace />} />
         <Route path="/self-scheduling" element={<OntraportSelfSchedulingPage />} />
         <Route path="/draft/self-scheduling" element={<OntraportSelfSchedulingPage />} />
         <Route path="/inbox" element={<OntraportInboxPage />} />

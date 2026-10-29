@@ -122,7 +122,7 @@ export function NewHomePageDraft() {
 
   <div className="flex justify-end">
     <button
-      onClick={() => window.location.href = "/draft/teamyou"}
+      onClick={() => window.location.href = "/teamyou"}
       className="flex cursor-pointer items-center gap-2 rounded-full bg-[#3D3D3D] px-6 py-3 text-[16px] font-medium text-white transition-colors hover:bg-[#ED5625]"
     >
       View
