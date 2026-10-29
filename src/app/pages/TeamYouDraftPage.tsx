@@ -207,7 +207,7 @@ export function TeamYouDraftPage() {
         </div>
 
         {/* Know what to work on next */}
- <div style={{ backgroundColor: 'rgba(241,238,236,0.8)', textAlign: 'center', borderRadius: '32px 32px 32px 32px', width: '100%', overflow: 'hidden' }}>
+ <div style={{ backgroundColor: '#EEEBE9', textAlign: 'center', borderRadius: '32px 32px 32px 32px', width: '100%', overflow: 'hidden' }}>
           <div className="ty-feature-copy" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
             <p style={{ textAlign: 'center', maxWidth: 800, fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: 29, lineHeight: 'normal', color: '#0f1629', margin: 0 }}>
               Know what to work on next
