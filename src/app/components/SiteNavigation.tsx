@@ -113,23 +113,25 @@ export function SiteNavigation({ activePage = 'work' }: { activePage?: NavPage }
           border-bottom: 2px solid #0f1629; content: "";
         }
         .site-nav-contact-menu {
-          position: absolute; top: calc(100% + 4px); right: 0; z-index: 50;
+          position: absolute; top: 100%; right: 0; z-index: 50;
         }
         .site-nav-contact-card {
-          display: flex; flex-direction: column; border-radius: 6px 0 6px 6px;
-          background: #fff; padding: 24px;
-          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+          display: flex; flex-direction: column; border-radius: 8px 0 8px 8px;
+          box-sizing: border-box; min-width: 283px; background: #0F1629; padding: 24px;
         }
         .site-nav-contact:hover,
         .site-nav-contact[aria-expanded="true"],
-        .site-nav-contact:focus-visible { background: #FFEEDB; }
+        .site-nav-contact:focus-visible { background: #0F1629; color: #fff; }
+        .site-nav-contact:hover .site-nav-chevron,
+        .site-nav-contact[aria-expanded="true"] .site-nav-chevron,
+        .site-nav-contact:focus-visible .site-nav-chevron { color: #fff; }
         .site-nav-menu-item {
-          display: flex; min-height: 40px; align-items: center; gap: 20px;
-          border-radius: 8px; padding: 8px;
+          display: flex; min-height: 44px; align-items: center; gap: 20px;
+          border-radius: 8px; padding: 10px 12px; color: #fff;
         }
         .site-nav-menu-item:hover,
-        .site-nav-menu-item:focus-visible { background: #FEEBD8; }
-        .site-nav-menu-item-label { min-width: 0; flex: 1; white-space: nowrap; }
+        .site-nav-menu-item:focus-visible { background: #272D3E; }
+        .site-nav-menu-item-label { min-width: 0; flex: 1 0 auto; white-space: nowrap; }
         .site-nav-email-row { gap: 0; }
         .site-nav-email-icon { margin-right: 20px; }
         .site-nav-copy-button { width: 16px; height: 16px; margin-left: 8px; }
@@ -139,8 +141,13 @@ export function SiteNavigation({ activePage = 'work' }: { activePage?: NavPage }
           .site-nav-contact {
             position: relative; display: inline-flex; width: 112px; height: 35px;
             box-sizing: border-box; align-items: flex-end; justify-content: flex-end;
-            gap: 4px; border-radius: 4px 4px 0 0; padding: 4px 0 0 12px;
+            gap: 4px; border-radius: 4px 4px 0 0; padding: 4px 0 0 12px;}
+          .site-nav-contact[aria-expanded="true"] { isolation: isolate; background: transparent; }
+          .site-nav-contact[aria-expanded="true"]::before {
+            position: absolute; inset: 0 -12px -4px 0; z-index: -1; content: "";
+            border-radius: 4px 4px 0 0; background: #0F1629;
           }
+          .site-nav-contact-menu { top: calc(100% + 4px); right: -12px; }
         }
         @media (min-width: 640px) {
           .site-nav-header { position: relative; height: 64px; flex-direction: row; align-items: flex-end; gap: 30px; padding: 0; }
@@ -226,7 +233,7 @@ export function SiteNavigation({ activePage = 'work' }: { activePage?: NavPage }
                           <img src="/images/Email.svg" alt="" aria-hidden="true" className="site-nav-email-icon h-6 w-6 shrink-0" />
                           <a
                             href="mailto:jon@sendpep.com"
-                            className="site-nav-menu-item-label font-['Poppins',sans-serif] text-[16px] text-[#0f1629] no-underline"
+                            className="site-nav-menu-item-label font-['Poppins',sans-serif] text-[16px] text-white no-underline"
                           >
                             jon@sendpep.com
                           </a>
@@ -247,7 +254,7 @@ export function SiteNavigation({ activePage = 'work' }: { activePage?: NavPage }
                           href="https://www.linkedin.com/in/jonathan-w123/"
                           target="_blank"
                           rel="noreferrer"
-                          className="site-nav-menu-item font-['Poppins',sans-serif] text-[16px] text-[#0f1629] no-underline"
+                          className="site-nav-menu-item font-['Poppins',sans-serif] text-[16px] text-white no-underline"
                         >
                           <img src="/images/linkedin.svg" alt="" aria-hidden="true" className="h-6 w-6 shrink-0" />
                           <span className="site-nav-menu-item-label">LinkedIn</span>

@@ -25,6 +25,8 @@ export function AboutPage() {
 
 
 
+        <div className="flex flex-col items-start gap-20 lg:flex-row lg:justify-between lg:gap-10">
+        <div className="flex min-w-0 flex-col gap-20">
         <section className="grid gap-1 lg:gap-1">
         <h2 className="m-0 font-['Poppins',sans-serif] mb-6 mt-0 text-[28px] font-semibold leading-[1.3] text-[#0f1629]">
           Where it all began
@@ -92,9 +94,14 @@ export function AboutPage() {
         </p>
         </div>
       </section>
+        </div>
 
-
-
+        <aside aria-hidden="true" className="flex w-full max-w-[320px] shrink-0 flex-col gap-10 lg:w-[175px] lg:gap-[95px]">
+          {[1, 2, 3, 4, 5, 6, 7].map((n) => (
+            <img key={n} src={`/images/about-${n}.png`} alt="" className="block h-auto w-full" />
+          ))}
+        </aside>
+        </div>
 
       <section aria-labelledby="experience-heading" className="w-full">
         <div className="sm:p-10 gap-6 rounded-[32px] bg-[#F3F0ED] p-6 sm:p-10 lg:p-15">

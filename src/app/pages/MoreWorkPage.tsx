@@ -6,7 +6,6 @@ import { SiteNavigation } from '../components/SiteNavigation';
 type Project = {
   title: string;
   description?: string;
-  captionPaddingTop?: number;
   image: string;
   imageAlt: string;
 };
@@ -71,7 +70,6 @@ const featureProjects: Project[] = [
   },
   {
     title: 'Ontraport Sites — Feature Image',
-    captionPaddingTop: 48,
     image: '/images/ImgFetaureImgSites.png',
     imageAlt: 'Ontraport Sites feature image',
   },
@@ -100,7 +98,6 @@ const featureProjects: Project[] = [
 const illustrationProjects: Project[] = [
   {
     title: 'Illustration - TeamYou',
-    captionPaddingTop: 48,
     image: '/images/Illustration-badges.png',
     imageAlt: 'TeamYou achievement badge illustrations',
   },
@@ -116,11 +113,13 @@ function ProjectCarousel({
   intro,
   projects,
   imageHeight,
+  captionPaddingTop,
 }: {
   title: string;
   intro?: string;
   projects: Project[];
   imageHeight?: number;
+  captionPaddingTop?: number;
 }) {
   const [activeProject, setActiveProject] = useState(0);
   const imageScrollerRef = useRef<HTMLDivElement>(null);
@@ -281,7 +280,7 @@ function ProjectCarousel({
                     projectCaptionTextRef.current[index] = element;
                   }}
                   className="flex w-full flex-col items-center justify-start px-6 pb-8 pt-3 text-center"
-                  style={project.captionPaddingTop ? { paddingTop: project.captionPaddingTop } : undefined}
+                  style={captionPaddingTop ? { paddingTop: captionPaddingTop } : undefined}
                 >
                   <h3 className="mb-3 mt-0 text-[24px] font-medium leading-[1.3]">
                     {project.title}
@@ -338,6 +337,7 @@ export function MoreWorkPage() {
             intro="A collection of feature visuals created to communicate product capabilities, simplify complex workflows, and bring consistency to the Ontraport brand across marketing and product experiences."
             projects={featureProjects}
             imageHeight={588}
+            captionPaddingTop={24}
           />
         </div>
 
@@ -347,6 +347,7 @@ export function MoreWorkPage() {
             intro="I never turn down a chance to illustrate—from achievement badges for TeamYou to a playful T-shirt for a bug-finding contest."
             projects={illustrationProjects}
             imageHeight={788}
+            captionPaddingTop={24}
           />
         </div>
       </div>
