@@ -1,7 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import { Check } from 'lucide-react';
 
-export function SiteNavigation({ activePage = 'work' }: { activePage?: 'work' | 'about' }) {
+type NavPage = 'work' | 'more-work' | 'about';
+
+const navItems: { page: NavPage; href: string; label: string }[] = [
+  { page: 'work', href: '/', label: 'Case Studies' },
+  { page: 'more-work', href: '/more-work', label: 'More Work' },
+  { page: 'about', href: '/about', label: 'About' },
+];
+
+export function SiteNavigation({ activePage = 'work' }: { activePage?: NavPage }) {
   const [contactOpen, setContactOpen] = useState(false);
   const [copyStatus, setCopyStatus] = useState('');
   const [contentOverlapsNav, setContentOverlapsNav] = useState(false);
@@ -87,7 +95,7 @@ export function SiteNavigation({ activePage = 'work' }: { activePage?: 'work' | 
       <style>{`
         .site-nav-sticky { position: sticky; top: 0; z-index: 40; pointer-events: none; }
         .site-nav-panel {
-          box-sizing: border-box; width: min(100%, 648px); margin-left: auto;
+          box-sizing: border-box; width: min(100%, 813px); margin-left: auto;
           padding: 0 24px 24px; border-radius: 0 0 16px 16px;
           background: transparent; pointer-events: auto;
         }
@@ -131,15 +139,21 @@ export function SiteNavigation({ activePage = 'work' }: { activePage?: 'work' | 
           .site-nav-contact {
             position: relative; display: inline-flex; width: 112px; height: 35px;
             box-sizing: border-box; align-items: flex-end; justify-content: flex-end;
-            gap: 4px; border-radius: 4px 4px 0 0; padding: 4px 6px 0 12px;
+            gap: 4px; border-radius: 4px 4px 0 0; padding: 4px 0 0 12px;
           }
         }
         @media (min-width: 640px) {
-          .site-nav-header { position: relative; height: 64px; flex-direction: row; align-items: center; gap: 40px; padding: 0; }
-          .site-nav-header > a { position: absolute; bottom: 2px; left: 0; }
-          .site-nav-links { position: absolute; right: 0; bottom: 4px; width: auto; height: auto; align-items: baseline; gap: 40px; }
+          .site-nav-header { position: relative; height: 64px; flex-direction: row; align-items: flex-end; gap: 30px; padding: 0; }
+          .site-nav-header > a { position: static; margin-bottom: 2px; }
+          .site-nav-links { position: static; width: auto; height: auto; align-items: baseline; justify-content: flex-start; gap: 30px; margin-bottom: 4px; }
           .site-nav-about-item { margin-right: -12px; }
           .site-nav-item { height: auto; align-items: baseline; }
+        }
+        @media (min-width: 640px) and (max-width: 884px) {
+          .site-nav-header { height: auto; flex-direction: column; align-items: stretch; gap: 12px; }
+          .site-nav-header > a { position: static; margin-bottom: 0; }
+          .site-nav-links { position: static; width: 100%; justify-content: flex-start; gap: 30px; margin-bottom: 0; margin-left: 0; }
+          .site-nav-about-item { margin-right: 0; }
         }
       `}</style>
       <nav ref={navRef} aria-label="Main navigation" className="site-nav-sticky">
@@ -147,7 +161,7 @@ export function SiteNavigation({ activePage = 'work' }: { activePage?: 'work' | 
           <div className={`site-nav-panel ${contentOverlapsNav ? 'is-overlapping' : ''}`}>
             <div
               className="site-nav-header ml-auto w-full border-b border-[#f0f0ef]"
-              style={{ width: 'min(100%, 600px)', marginLeft: 'auto' }}
+              style={{ width: 'min(100%, 765px)', marginLeft: 'auto' }}
             >
             <a
               href="/"
@@ -157,27 +171,21 @@ export function SiteNavigation({ activePage = 'work' }: { activePage?: 'work' | 
             </a>
 
             <div className="site-nav-links sm:shrink-0">
-              <div className={`site-nav-item ${activePage === 'work' ? 'is-active' : ''}`}>
-                <a
-                  href="/"
-                  aria-current={activePage === 'work' ? 'page' : undefined}
-                  className={`${navLinkClass} ${activePage === 'work' ? 'font-bold' : 'font-normal'}`}
+              {navItems.map(item => (
+                <div
+                  key={item.page}
+                  className={`site-nav-item ${item.page === 'about' ? 'site-nav-about-item' : ''} ${activePage === item.page ? 'is-active' : ''}`}
                 >
-                  <span aria-hidden="true" className="invisible col-start-1 row-start-1 font-bold">Work</span>
-                  <span className="col-start-1 row-start-1">Work</span>
-                </a>
-              </div>
-
-              <div className={`site-nav-item site-nav-about-item ${activePage === 'about' ? 'is-active' : ''}`}>
-                <a
-                  href="/about"
-                  aria-current={activePage === 'about' ? 'page' : undefined}
-                  className={`${navLinkClass} ${activePage === 'about' ? 'font-bold' : 'font-normal'}`}
-                >
-                  <span aria-hidden="true" className="invisible col-start-1 row-start-1 font-bold">About</span>
-                  <span className="col-start-1 row-start-1">About</span>
-                </a>
-              </div>
+                  <a
+                    href={item.href}
+                    aria-current={activePage === item.page ? 'page' : undefined}
+                    className={`${navLinkClass} ${activePage === item.page ? 'font-bold' : 'font-normal'}`}
+                  >
+                    <span aria-hidden="true" className="invisible col-start-1 row-start-1 font-bold">{item.label}</span>
+                    <span className="col-start-1 row-start-1">{item.label}</span>
+                  </a>
+                </div>
+              ))}
 
               <div
                 className="site-nav-item relative"
