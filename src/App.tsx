@@ -4,6 +4,7 @@ import { TeamYouDraftPage } from './app/pages/TeamYouDraftPage'
 import { OntraportSelfSchedulingPage } from './app/pages/OntraportSelfSchedulingPage'
 import { OntraportInboxPage } from './app/pages/OntraportInboxPage'
 import { AboutPage } from './app/pages/AboutPage'
+import { MoreWorkPage } from './app/pages/MoreWorkPage'
 import { GoogleAnalyticsPageTracker } from './app/components/GoogleAnalyticsPageTracker'
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<NewHomePageDraft />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/more-work" element={<MoreWorkPage />} />
         <Route path="/draft" element={<Navigate to="/" replace />} />
         <Route path="/teamyou" element={<TeamYouDraftPage />} />
         <Route path="/draft/teamyou" element={<Navigate to="/teamyou" replace />} />
