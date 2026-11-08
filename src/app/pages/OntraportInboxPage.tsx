@@ -1,5 +1,6 @@
 import { ContactFooter } from '../components/ContactFooter';
 import { SiteNavigation } from '../components/SiteNavigation';
+import { UpNextSection } from '../components/UpNextSection';
 
 const tags = ['Messaging', 'CRM', 'B2B'];
 
@@ -173,6 +174,16 @@ export function OntraportInboxPage() {
             </div>
           </div>
         </section>
+
+        <UpNextSection
+          title="More work"
+          description="A CRM redesign with an AI assistant, plus product launch collateral and illustrations."
+          tags={['CRM Redesign', 'Marketing', 'Illustration']}
+          href="/more-work"
+          imageSrc="/images/thumb-OP.png"
+          imageAlt="Preview of the More work collection"
+          logoSrc="/images/Logo.svg"
+        />
 
         <ContactFooter />
       </div>

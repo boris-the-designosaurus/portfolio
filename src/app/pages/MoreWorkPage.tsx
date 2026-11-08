@@ -2,6 +2,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { ContactFooter } from '../components/ContactFooter';
 import { SiteNavigation } from '../components/SiteNavigation';
+import { UpNextSection } from '../components/UpNextSection';
 
 type Project = {
   title: string;
@@ -353,6 +354,17 @@ export function MoreWorkPage() {
       </div>
 
       <div className="mx-auto w-full max-w-[1280px] px-4 pt-8 mt-[100px]">
+        <div className="mb-20">
+          <UpNextSection
+            title="About"
+            description="Milestones in my journey"
+            tags={[]}
+            href="/about"
+            imageSrc="/images/thumb-about.png"
+            imageAlt="Preview of the About page"
+            logoSrc="/images/Logo.svg"
+          />
+        </div>
         <ContactFooter />
       </div>
     </main>

@@ -25,20 +25,22 @@ export function UpNextSection({
       <div className="flex min-w-0 flex-1 flex-col items-start gap-2">
           <img src={logoSrc} alt="" aria-hidden="true" className="h-[62px] w-[63px]" />
           <div className="flex flex-col gap-1">
-            <h3 className="m-0 text-[26px] font-semibold leading-tight text-[#0f1629] sm:text-[31px]">
+            <h3 id="up-next-heading" className="m-0 text-[26px] font-semibold leading-tight text-[#0f1629] sm:text-[31px]">
               Up Next: {title}
             </h3>
             <p className="m-0 text-[17px] leading-[1.5] text-[#0f1629] sm:text-[20px]">
               {description}
             </p>
           </div>
-          <div className="mt-2 flex flex-wrap gap-1">
-            {tags.map(tag => (
-              <span key={tag} className="rounded-full border border-[#D6D3D1] px-[14px] py-[5px] text-[14px] text-[#59524d]">
-                {tag}
-              </span>
-            ))}
-          </div>
+          {tags.length > 0 && (
+            <div className="mt-2 flex flex-wrap gap-1">
+              {tags.map(tag => (
+                <span key={tag} className="rounded-full border border-[#D6D3D1] px-[14px] py-[5px] text-[14px] text-[#59524d]">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
 
           <div className="flex justify-end">
             <a

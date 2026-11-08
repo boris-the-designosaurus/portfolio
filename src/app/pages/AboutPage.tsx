@@ -1,3 +1,4 @@
+import { ExternalLink } from 'lucide-react';
 import { ContactFooter } from '../components/ContactFooter';
 import { SiteNavigation } from '../components/SiteNavigation';
 
@@ -105,9 +106,20 @@ export function AboutPage() {
 
       <section aria-labelledby="experience-heading" className="w-full">
         <div className="sm:p-10 gap-6 rounded-[32px] bg-[#F3F0ED] p-6 sm:p-10 lg:p-15">
-          <h2 id="experience-heading" className="mb-6 mt-0 text-[28px] font-semibold leading-[1.3] text-[#0f1629]">
-            Experience
-          </h2>
+          <div className="mb-6 flex items-center justify-between gap-4">
+            <h2 id="experience-heading" className="m-0 text-[28px] font-semibold leading-[1.3] text-[#0f1629]">
+              Experience
+            </h2>
+            <a
+              href="https://drive.google.com/file/d/1YtcEMfLGiLlld2EeO6gi5yaL5h7-mY6s/view?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#0F1629] px-6 py-3 text-[16px] font-semibold leading-none text-white no-underline transition-colors hover:bg-[#272D3E]"
+            >
+              <ExternalLink aria-hidden="true" className="h-4 w-4" />
+              Detailed Resume
+            </a>
+          </div>
           <dl className="m-0">
             <div className="grid gap-2 border-t border-[#E3DFDA] py-6 text-[18px] leading-[1.5] text-[#252B3A] sm:grid-cols-3 sm:gap-8 sm:text-[20px]">
               <dt>Team you</dt>
