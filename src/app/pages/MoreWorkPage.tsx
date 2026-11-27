@@ -109,20 +109,68 @@ const illustrationProjects: Project[] = [
   },
 ];
 
+const websiteProjects: Project[] = [
+  {
+    title: 'Ontraport Marketing Website',
+    image: '/images/website-ontraport.png',
+    imageAlt: 'Ontraport website',
+  },
+  {
+    title: 'MBA Landing Page Template',
+    description:
+      'One of several templates I designed on a tight timeline for the launch of Ontraport’s drag-and-drop editor.',
+    image: '/images/website-haliford.png',
+    imageAlt: 'Haliford University course website',
+  },
+  {
+    title: 'Webinar Registration Template',
+    description:
+      'One of several templates I designed on a tight timeline for the launch of Ontraport’s drag-and-drop editor.',
+    image: '/images/website-bottomline.png',
+    imageAlt: 'Selling online webinar landing page',
+  },
+  {
+    title: 'Lead Generation Webinar Template',
+    image: '/images/website-lead-generation.png',
+    description:
+      'One of several templates I designed on a tight timeline for the launch of Ontraport’s drag-and-drop editor.',
+    imageAlt: 'Lead generation webinar registration page',
+  },
+  {
+    title: "Real Estate Listing Template",
+    image: '/images/website-hendricks-houses.png',
+    description:
+      'One of several templates I designed on a tight timeline for the launch of Ontraport’s drag-and-drop editor.',
+    imageAlt: "Hendrick's Houses real estate website",
+  },
+  {
+    title: 'Webinar Registration Template',
+    description:
+      'One of several templates I designed on a tight timeline for the launch of Ontraport’s drag-and-drop editor.',
+    image: '/images/website-ontraport-webinar.png',
+    imageAlt: 'Ontraport webinar landing page',
+  },
+];
+
 function ProjectCarousel({
   title,
   intro,
   projects,
   imageHeight,
+  imageMaxWidth,
   captionPaddingTop,
+  floatCaptionOnGalleryOverlap = false,
 }: {
   title: string;
   intro?: string;
   projects: Project[];
   imageHeight?: number;
+  imageMaxWidth?: number;
   captionPaddingTop?: number;
+  floatCaptionOnGalleryOverlap?: boolean;
 }) {
   const [activeProject, setActiveProject] = useState(0);
+  const galleryRef = useRef<HTMLDivElement>(null);
   const imageScrollerRef = useRef<HTMLDivElement>(null);
   const projectImagesRef = useRef<(HTMLImageElement | null)[]>([]);
   const projectSlidesRef = useRef<(HTMLElement | null)[]>([]);
@@ -166,23 +214,23 @@ function ProjectCarousel({
       // Captions ride along with the carousel's horizontal scroll.
       track.style.transform = `translate3d(${-imageScroller.scrollLeft}px, 0, 0)`;
 
-      // Vertical floating is pure CSS sticky; this only fills the corners while it is pinned.
-      const pinned = Math.abs(dock.getBoundingClientRect().bottom - window.innerHeight) < 1;
-      dock.style.backgroundColor = pinned ? '#FBFAF9' : 'transparent';
-
       const nav = document.querySelector('.site-nav-sticky');
       const navBottom = nav ? nav.getBoundingClientRect().bottom : 0;
-      const imageTop = imageScroller.getBoundingClientRect().top;
+      const overlapTop = floatCaptionOnGalleryOverlap
+        ? galleryRef.current?.getBoundingClientRect().top ?? scrollerRect.top
+        : scrollerRect.top;
       const closestSlide = projectSlidesRef.current[closestIndex];
       // The slide's top padding can scroll under the nav, so only the image itself has to fit.
       const slideHeight = closestSlide
         ? closestSlide.offsetHeight - parseFloat(getComputedStyle(closestSlide).paddingTop)
         : 0;
       const fitsViewport = slideHeight + dock.offsetHeight <= window.innerHeight - navBottom;
-      // The caption stays in its normal spot beneath the image. It only floats once the image
-      // wrapper has reached the nav and image + caption can't both fit in the window.
-      const shouldFloat = !fitsViewport && imageTop <= navBottom;
+      const shouldFloat = overlapTop <= navBottom && (floatCaptionOnGalleryOverlap || !fitsViewport);
       dock.style.position = shouldFloat ? '' : 'relative';
+
+      // Vertical floating is pure CSS sticky; this only fills the corners while it is pinned.
+      const pinned = Math.abs(dock.getBoundingClientRect().bottom - window.innerHeight) < 1;
+      dock.style.backgroundColor = pinned ? '#FBFAF9' : 'transparent';
     };
 
     imageScroller.addEventListener('scroll', updateCarouselState, { passive: true });
@@ -201,7 +249,7 @@ function ProjectCarousel({
         image?.removeEventListener('load', updateCarouselState);
       });
     };
-  }, [projects]);
+  }, [projects, floatCaptionOnGalleryOverlap]);
 
   return (
         <section className="relative rounded-[32px] border border-[#EAE7E5] px-0 pb-0 pt-14 sm:px-0 sm:pb-0 sm:pt-16">
@@ -213,7 +261,7 @@ function ProjectCarousel({
           {intro}
         </p>
       ) : null}
-      <div className="-mx-px -mb-px overflow-clip rounded-[32px] bg-[#EEEBE9]">
+      <div ref={galleryRef} className="-mx-px -mb-px overflow-clip rounded-[32px] bg-[#EEEBE9]">
 
         <div className="group/carousel relative">
         <div className="pointer-events-none absolute inset-0 z-10 box-border pt-16">
@@ -260,8 +308,8 @@ function ProjectCarousel({
                 }}
                 src={project.image}
                 alt={project.imageAlt}
-                className={`block rounded-[22px] ${imageHeight ? 'mx-auto w-auto max-w-full object-contain' : 'h-auto w-full'}`}
-                  style={imageHeight ? { height: imageHeight } : undefined}
+                className={`block rounded-[22px] ${imageHeight ? 'mx-auto w-auto max-w-full object-contain' : 'mx-auto h-auto w-full'}`}
+                style={{ height: imageHeight, maxWidth: imageMaxWidth }}
               />
             </figure>
           ))}
@@ -349,6 +397,17 @@ export function MoreWorkPage() {
             projects={illustrationProjects}
             imageHeight={788}
             captionPaddingTop={24}
+          />
+        </div>
+
+        <div className="mt-[200px]">
+          <ProjectCarousel
+            title="Websites"
+            intro="I helped maintain Ontraport’s marketing website and designed a set of landing page templates on a tight timeline for the launch of our drag-and-drop editor."
+            projects={websiteProjects}
+            imageMaxWidth={1121}
+            captionPaddingTop={24}
+            floatCaptionOnGalleryOverlap
           />
         </div>
       </div>
